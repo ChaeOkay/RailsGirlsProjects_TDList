@@ -1,3 +1,5 @@
+require 'shoulda'
+
 class Tasklist 
   attr_accessor :task, :task_status, :task_list
 
@@ -28,16 +30,34 @@ class Tasklist
   end
 end
 
+
+
+describe "TaskList" do
+  let(:weekend) {Tasklist.new}
+  before  { weekend.task_create("Sleep in") }
+  
+  describe "Tasklist should have tasks" do
+    it { should validate_presence_of(:task) }
+  end
+
+  describe "Tasklists should have task list" do
+  it { should validate_presence_of(:task_list) }
+  end
+
+end
+
+=begin
 weekend = Tasklist.new
 weekend.task_create("Sleep in")
 weekend.task_create("Party down")
 weekend.display_all_tasks
 
-=begin
+
 describe Tasklist do
   it should have tasks
   it should mark when tasks are completed
   it should have a datetime when tasks begin
   it should have a datetime when tasks are completed
 end
+
 =end
