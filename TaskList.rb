@@ -10,12 +10,12 @@ class Tasklist
   def task_create(task_description)
       @task = @task_status[:active], task_description, Time.now.strftime("%D %R")
       @task_list << @task
-    end
   end
   
   def display_all_tasks
     @task_list.each do |status, description, time|
       puts "#{status} : #{description}\n\sadded at #{time}"
+    end
   end
   
   def task_remove
@@ -26,7 +26,6 @@ class Tasklist
   
   def task_delete
   end
-
 end
 
 weekend = Tasklist.new
