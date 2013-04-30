@@ -32,18 +32,19 @@ end
 
 
 
-describe "TaskList" do
-  let(:weekend) {Tasklist.new}
-  before  { weekend.task_create("Sleep in") }
+describe "New TaskList" do
   
-  describe "Tasklist should have tasks" do
-    it { should validate_presence_of(:task) }
+  before do
+    @weekend = Tasklist.new
+    @weekend.task_create("sleep in")
+    @weekend.task_create("party down")
   end
-
-  describe "Tasklists should have task list" do
-  it { should validate_presence_of(:task_list) }
+  
+  describe "task" do
+    it "should have a task" do
+      @weekend.should be_an_instance_of Tasklist
+    end
   end
-
 end
 
 =begin
@@ -59,5 +60,19 @@ describe Tasklist do
   it should have a datetime when tasks begin
   it should have a datetime when tasks are completed
 end
+
+
+
+describe "TaskList" do
+  let(:weekend) {Tasklist.new}
+  before  { weekend.task_create("Sleep in") }
+  
+  describe "Tasklist should have tasks" do
+    it { should validate_presence_of(:task) }
+  end
+
+  describe "Tasklists should have task list" do
+  it { should validate_presence_of(:task_list) }
+  end
 
 =end
