@@ -40,7 +40,7 @@ describe "New TaskList" do
     @weekend.task_create("party down")
   end
   
-  describe "task" do
+  describe "creating a task" do
     it "should have a task" do
       @weekend.should be_an_instance_of Tasklist
     end
