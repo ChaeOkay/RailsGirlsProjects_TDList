@@ -1,7 +1,5 @@
-require 'shoulda'
-
 class Tasklist 
-  attr_accessor :task, :task_status, :task_list
+  attr_accessor :task, :task_description, :task_status, :task_list, :time_created
 
   def initialize
     @task_list = []
@@ -10,8 +8,10 @@ class Tasklist
   end
   
   def task_create(task_description)
-      @task = @task_status[:active], task_description, Time.now.strftime("%D %R")
-      @task_list << @task
+    @time_created = Time.now.strftime("%D %R")
+    @task_description = task_description
+    @task = @task_status[:active], @task_description, @time_created
+    @task_list << @task
   end
   
   def display_all_tasks
@@ -33,46 +33,32 @@ end
 
 
 describe "New TaskList" do
-  
   before do
     @weekend = Tasklist.new
     @weekend.task_create("sleep in")
     @weekend.task_create("party down")
   end
   
-  describe "creating a task" do
-    it "should have a task" do
-      @weekend.should be_an_instance_of Tasklist
+  describe "creating new tasks" do
+    it "should include tasks in the Task List" do
+      @weekend.task_list.size.should eql(2)
     end
   end
-end
-
-=begin
-weekend = Tasklist.new
-weekend.task_create("Sleep in")
-weekend.task_create("Party down")
-weekend.display_all_tasks
-
-
-describe Tasklist do
-  it should have tasks
-  it should mark when tasks are completed
-  it should have a datetime when tasks begin
-  it should have a datetime when tasks are completed
-end
-
-
-
-describe "TaskList" do
-  let(:weekend) {Tasklist.new}
-  before  { weekend.task_create("Sleep in") }
   
-  describe "Tasklist should have tasks" do
-    it { should validate_presence_of(:task) }
+  describe "displaying all tasks" do
+    it "should include descriptions" do
+      @weekend.task_list.should include("sleep in" && "party down")
+    end
   end
-
-  describe "Tasklists should have task list" do
-  it { should validate_presence_of(:task_list) }
+    
+    
+  describe "removing a task" do
+    before do
+      @weekend.task_remove("party down")
+    end
+    it "should not have task description 'party down'" do
+      @weekend.task_remove.should_not include("party down")
+    end
   end
-
-=end
+    
+end
