@@ -1,4 +1,4 @@
-require './TaskList'
+require_relative 'TaskList'
 
 describe "New TaskList" do
   before do
@@ -13,7 +13,7 @@ describe "New TaskList" do
   
   describe "displaying all tasks" do
     it "should include descriptions" do
-      @weekend.display_all_tasks.should include("In Progress" && "party down")
+      @weekend.display_all_tasks.should include("sleep in" && "party down")
     end
   end
     
@@ -30,11 +30,11 @@ describe "New TaskList" do
     
   describe "removing a task" do
     it "should return an message if task does not currently exist" do
-      @weekend.task_delete("cook a meal").should include("cook a meal isn't listed!")
+      @weekend.delete_task("cook a meal").should include("cook a meal not listed.")
     end
     
     before do
-      @weekend.task_delete("party down")
+      @weekend.delete_task("party down")
     end
     
     it "should remove a task that currently exists" do

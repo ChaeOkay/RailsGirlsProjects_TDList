@@ -1,47 +1,39 @@
-class Tasklist 
-  attr_accessor :task_list
-
-  def initialize
-    @task_list = {}
-  end
+module TaskListFunctions
   
   def create_task(task_description)
-    @task_list[task_description.downcase] = "In Progress", Time.now.strftime("%D %R")
+    @task_list[task_description.downcase] = "In Progress"
   end
   
   def display_all_tasks
-    @task_list.each do |description, task_info|
-      puts "#{description} is #{task_info[0]}\n\sadded at #{task_info[1]}"
+    count = 1
+    @task_list.each do |description, status|
+      puts "#{count}: #{description} : #{status}"
+      count += 1
     end
   end
   
   def update_status(task)
-    if check_duplicates(task) == false
-      puts "Task not listed"
-    elsif @task_list[task][0] == "In Progress"
-        @task_list[task][0] = "COMPLETED"
-    elsif @task_list[task][0] == "COMPLETED"
-        @task_list[task][0] = "In Progress"
+    puts "Task not listed" if !check_duplicates(task)
+ 
+    if @task_list[task] == "In Progress"
+        @task_list[task] = "COMPLETED"
+    elsif @task_list[task] == "COMPLETED"
+        @task_list[task] = "In Progress"
     else
-        puts "Your task has a very strange status."
+        puts "Status not recognized."
     end
   end
   
-  def task_delete(task)
-    if check_duplicates(task) == false
-      puts "Task not listed"
+  def delete_task(task)
+    if !check_duplicates(task)
+      "#{task} not listed."
     else
-      puts "Delete #{task} \"#{@task_list[task][0]}\" ? Y/N"
-      response = gets.chomp.upcase
-      if response == "Y"
-        #remote task from hash
-      elsif response == "N"
-        # puts task not deleted
-      else
-        # sorry I couldn't understand you. Would you like to delete task in progres? Y?N
-      end
+      @task_list.delete(task)
+      "#{task} deleted."
     end
   end
+
+  private
 
   def check_duplicates(task)
     task = task.downcase
@@ -49,14 +41,17 @@ class Tasklist
   end
 end
 
+class Tasklist
+  include TaskListFunctions
 
-#task_list = { task_description:  { task_status: " ",
-#                                   time_created: " ",
-#                                   time_finished: " "
-#                                 }
+  attr_accessor :task_list
 
-#              task_description:  { task_status: " ",
-#                                   time_created: " ",
-#                                   time_finished: " "
-#                                 }
+  def initialize
+    @task_list = {}
+  end
+end
+
+
+#task_list = { task_description1:  "status",
+#              task_description1:  "status",
 #            }
