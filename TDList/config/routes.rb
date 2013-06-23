@@ -1,4 +1,5 @@
 TDList::Application.routes.draw do
+  get "home/index"
   resources :tasks
 
   resources :lists
