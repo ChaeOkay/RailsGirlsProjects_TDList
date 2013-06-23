@@ -4,9 +4,9 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, Rails.env)
 end
 
 module TDList
@@ -40,7 +40,8 @@ module TDList
     config.filter_parameters += [:password]
 
     # Enable escaping HTML in JSON.
-    config.active_support.escape_html_entities_in_json = true
+    # REMOVED FOR RAIL 4.0.0.rc2
+    # config.active_support.escape_html_entities_in_json = true
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -54,7 +55,8 @@ module TDList
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    # REMOVED FOR RAIL 4.0.0.rc2
+    # config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
