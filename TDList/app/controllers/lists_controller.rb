@@ -28,7 +28,7 @@ class ListsController < ApplicationController
 
 	# POST /lists
 	def create
-		@list = List.new(list_params)
+		@list = List.new(params[:list])
 
 		if @list.save
 			redirect_to @list, notice: 'List was successfully created.'
@@ -59,7 +59,7 @@ class ListsController < ApplicationController
 		end
 
 		# Only allow a trusted parameter "white list" through.
-		def list_params
-			params.require(:list).permit(:name, :list_status)
-		end
+		#def list_params
+		#	params.require(:list).permit(:name, :list_status)
+		#end
 end

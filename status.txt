@@ -1,0 +1,3 @@
+branch 062413_2
+- working on has/many belongs/to
+- need to show tasks and create tasks
