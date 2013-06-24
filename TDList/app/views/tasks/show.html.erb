@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+<table class="table table-striped">
+	<head>Name of List</head>
 
-<p>
-  <strong>Task status:</strong>
-  <%= @task.task_status %>
-</p>
+  <thead>Description:</thead>
+    <td><%= @task.description %></td>
 
-<p>
-  <strong>List:</strong>
-  <%= @task.list_id %>
-</p>
+  <thead>Task status:</thead>
+    <td><%= @task.task_status %></td>
+</table>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

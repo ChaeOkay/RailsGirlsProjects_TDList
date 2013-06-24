@@ -13,6 +13,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   def show
+    @task = Task.find(params[:list_id])
+    @tasks = @list.tasks
   end
 
   # GET /tasks/new
