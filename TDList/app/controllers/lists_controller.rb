@@ -4,6 +4,11 @@ class ListsController < ApplicationController
 	# GET /lists
 	def index
 		@lists = List.all
+
+	respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => @lists }
+    end
 	end
 
 	# GET /lists/1

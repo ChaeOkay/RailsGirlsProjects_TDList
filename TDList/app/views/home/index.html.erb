@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Task List</title>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+<div class="lists"
+  <ul><% @lists.each do |list| %>
+    <li><%= list.name %></li>
+    <li><%= list.list_status %></li>
+  </ul>
+</div>
