@@ -1,29 +1,14 @@
-<h1>Listing lists</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>List status</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.name %></td>
-        <td><%= list.list_status %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<tbody>
+  <% @lists.each do |list| %>
+    <dl>
+      <dt><%= list.name%> : <strong style="color:#999999"><%=list.list_status%></strong></dt>
+        <dd>
+          <ul class="inline">
+          <li><%= link_to 'Show', list %></li>
+          <li><%= link_to 'Edit', edit_list_path(list) %></li>
+          <li><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </dd>
+      </dl>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New List', new_list_path %>

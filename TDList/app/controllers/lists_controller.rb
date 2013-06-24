@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 	def index
 		@lists = List.all
 
-	respond_to do |format|
+		respond_to do |format|
       format.html  # index.html.erb
       format.json  { render :json => @lists }
     end
