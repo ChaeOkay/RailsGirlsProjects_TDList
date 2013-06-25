@@ -1,4 +1,4 @@
-<%= form_for(@list) do |f| %>
+<%= simple_form_for @list do |f| %>
   <% if @list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
@@ -11,16 +11,7 @@
     </div>
   <% end %>
 
-  <form>
-    
-    <label>Name of List</label>
-    <span><%= f.text_field :name %></span>
-
-    <label>List Status</label>
-    <span><%= f.text_field :list_status %></span>
-  </form>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :list_status %>
+  <%= f.button :submit %>
 <% end %>
