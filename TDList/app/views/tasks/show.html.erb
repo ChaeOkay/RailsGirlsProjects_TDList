@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @list.name %> <small><%= '#' %></small></h3>
+
 <table class="table table-striped">
-	<head>Name of List</head>
-
-  <thead>Description:</thead>
-    <td><%= @task.description %></td>
-
-  <thead>Task status:</thead>
-    <td><%= @task.task_status %></td>
+  <thead>
+  	<tr>
+  		<th>Task Description</th>
+  		<th>Status</th>
+  	</tr>
+  <% @tasks.each do |t| %>
+  <tbody>
+    <td><%= t.description %></td>
+    <td><%= t.task_status %></td>
+  </tbody>
+  <% end %>
 </table>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

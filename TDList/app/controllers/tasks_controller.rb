@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   def show
-    @task = Task.find(params[:list_id])
+    @list = List.find(params[:id])
     @tasks = @list.tasks
   end
 
