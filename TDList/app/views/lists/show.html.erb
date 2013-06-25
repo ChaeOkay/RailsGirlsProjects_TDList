@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @list.name %> <small><%= @list.list_status %></small></h3>
-
-<div class = "span8"
-	<% if @list.tasks.any? %>
-	   <h4>Tasks</h4>
-	   <ol><%= render @tasks %></ol>
-  <% end %>
-</div>
+<h1><%= @list.name %> <small><%= @list.list_status %></small></h1>
 
 <p class="btn">
      <%= link_to 'Add new task', new_task_path %>

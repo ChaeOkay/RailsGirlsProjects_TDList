@@ -1,7 +1,7 @@
 <tbody>
   <% @lists.each do |list| %>
     <dl>
-      <dt><%= list.name%> : <strong style="color:#999999"><%=list.list_status%></strong></dt>
+      <dt><h3><%= list.name%> <small style="color:#999999"><%=list.list_status%></small></h3></dt>
         <dd>
           <ul class="inline">
           <li><%= link_to 'Tasks', task_path(list.id) %></li>

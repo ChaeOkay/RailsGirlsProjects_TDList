@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @list.name %> <small><%= '#' %></small></h3>
+<h3><%= @list.name %> <small><%= @list.list_status %></small></h3>
 
 <table class="table table-striped">
   <thead>
@@ -10,11 +10,8 @@
   	</tr>
   <% @tasks.each do |t| %>
   <tbody>
-    <td><%= t.description %></td>
-    <td><%= t.task_status %></td>
+    <td><%= link_to t.description, edit_task_path(t) %></td>
+    <td><%= link_to t.task_status, edit_task_path(t) %></td>
   </tbody>
   <% end %>
 </table>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>

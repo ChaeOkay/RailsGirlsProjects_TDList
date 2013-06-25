@@ -1993,19 +1993,22 @@ legend + .control-group {
 }
 
 table {
-  max-width: 100%;
+  width: auto;  //removed
   background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
+  //border-collapse: collapse;  //removed
+  //border-spacing: 0;
+  margin-left: 20px; //added;
 }
 
+
 .table {
-  width: 100%;
+  width: 50%;
   margin-bottom: 20px;
 }
 
 .table th,
 .table td {
+  //width: 60px; //added
   padding: 8px;
   line-height: 20px;
   text-align: left;
@@ -2158,7 +2161,7 @@ table th[class*="span"],
 .table td.span1,
 .table th.span1 {
   float: none;
-  width: 44px;
+  width: 22px;  //made bigger
   margin-left: 0;
 }
 
