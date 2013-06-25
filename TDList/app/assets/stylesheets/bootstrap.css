@@ -17,6 +17,13 @@
   float: left;
  }
 
+ .new {
+  margin: 0 0 20px 20px;
+ }
+
+
+ /* end of added */
+
 .clearfix {
   *zoom: 1;
 }
@@ -78,6 +85,10 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+}
+
+a {
+  text-decoration: none;  //added
 }
 
 a:focus {
@@ -741,7 +752,11 @@ a.text-success:focus {
   text-align: center;
 }
 
-h1,
+h1 {
+  margin-bottom: 0px;
+}
+
+
 h2,
 h3,
 h4,
@@ -814,7 +829,7 @@ h4 small {
 
 .page-header {
   padding-bottom: 9px;
-  margin: 20px 0 20px;
+  margin: 20px 0 10px;
   border-bottom: 1px solid #eeeeee;
 }
 
@@ -2154,6 +2169,9 @@ table {
 .table-striped tbody > tr:nth-child(odd) > td,
 .table-striped tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
+}
+
+.table-striped tr {
 }
 
 .table-hover tbody tr:hover > td,
