@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :task_status %><br>
-    <%= f.text_field :task_status %>
-  </div>
-    <div class="field">
-    <%= f.label :list_id %><br>
-    <%= f.text_field :list_id %>
-  </div>
+  <form>
+    <legend></legend>
+    <label>Task Description</label>
+    <span><%= f.text_field :description %></span>
+
+    <label>Task Status</label>
+    <span><%= f.text_field :task_status %></span>
+  </form>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

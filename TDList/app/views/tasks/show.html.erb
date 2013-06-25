@@ -8,6 +8,7 @@
   		<th>Task Description</th>
   		<th>Status</th>
   	</tr>
+    <legend></legend>
   <% @tasks.each do |t| %>
   <tbody>
     <td><%= link_to t.description, edit_task_path(t) %></td>
