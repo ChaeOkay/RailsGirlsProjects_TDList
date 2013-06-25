@@ -1,8 +1,8 @@
 TDList::Application.routes.draw do
   get "lists/index"
-
-  resources :tasks
+  
   resources :lists
+  resources :tasks 
 
   #match :name => 'tasks#index', :as => 'list_tasks'
   
