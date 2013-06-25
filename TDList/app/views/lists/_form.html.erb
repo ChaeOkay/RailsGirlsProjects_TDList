@@ -11,20 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :list %><br>
-    <%= f.text_field :list_id %>
-  </div>
+  <form>
+    
+    <label>Name of List</label>
+    <span><%= f.text_field :name %></span>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :list_status %><br>
-    <%= f.text_field :list_status %>
-  </div>
+    <label>List Status</label>
+    <span><%= f.text_field :list_status %></span>
+  </form>
   
   <div class="actions">
     <%= f.submit %>
