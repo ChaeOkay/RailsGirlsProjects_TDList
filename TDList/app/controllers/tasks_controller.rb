@@ -19,7 +19,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @task = Task.new(params[:id])
   end
 
   # GET /tasks/1/edit
