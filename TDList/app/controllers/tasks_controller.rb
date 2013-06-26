@@ -42,8 +42,9 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
+    @task = Task.find(params[:id])
     if @task.update(params[:task])
-      redirect_to @task, notice: 'Task was successfully updated.'
+      redirect_to @task.list, notice: 'Task was successfully updated.'
     else
       render action: 'edit'
     end
