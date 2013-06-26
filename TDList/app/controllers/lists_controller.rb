@@ -24,6 +24,8 @@ class ListsController < ApplicationController
 
 	# GET /lists/1/edit
 	def edit
+		@list = List.find(params[:id])
+		@tasks = @list.tasks
 	end
 
 	# POST /lists
@@ -39,7 +41,7 @@ class ListsController < ApplicationController
 
 	# PATCH/PUT /lists/1
 	def update
-		if @list.update(list_params)
+		if @list.update(params[:list])
 			redirect_to @list, notice: 'List was successfully updated.'
 		else
 			render action: 'edit'
