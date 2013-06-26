@@ -1,27 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @list.name %> <small><%= @list.list_status %></small></h3>
-<h4> With Tasks : 
-  <% if @tasks.empty? %>
-      none
-  <% else %>
-		<% @tasks.each do |t| %>
-      <small>
-			<%= t.description %>
-      </small>
-		<% end %>
-  <% end %>
-</h4>
+<h3><%= @list.name %> 
+  <small> <%= @list.list_status %></small> 
+  <small><%= link_to 'Edit List', edit_list_path(@list) %></small> 
+</h3>
 
-<% if @tasks.empty? %>
-  <p class="btn">
-  <%= link_to 'Add new task', new_task_path %>
-  </p>
-<% else %>
-  <p class="btn">
-    <%= link_to 'Show list', task_path(@list.id) %>
-  </p>
-  <p class="btn">
-    <%= link_to 'Add new task', new_task_path %>
-  </p>
-<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td><%= link_to "Create New Task", new_task_path %></td>
+    </tr>
+    <tr>
+      <th>Task Description</th>
+      <th>Status</th>
+    </tr>
+    <legend></legend>
+  <% @tasks.each do |t| %>
+  <tbody>
+    <td><%= link_to t.description, edit_task_path(t) %></td>
+    <td><%= link_to t.task_status, edit_task_path(t) %></td>
+  </tbody>
+  <% end %>
+</table>

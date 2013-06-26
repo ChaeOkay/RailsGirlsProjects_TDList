@@ -5,10 +5,6 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
 
-   # respond_to do |format|
-   #   format.html  # index.html.erb
-   #   format.json  { render :json => @tasks }
-   # end
   end
 
   # GET /tasks/1
@@ -52,18 +48,9 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1
   def destroy
+    @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+    redirect_to @task.list, notice: 'Task was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    #def set_task
-    #  @task = Task.find(params[:id])
-    #end
-
-    # Only allow a trusted parameter "white list" through.
-    #def task_params
-    #  params.require(:task).permit(:description, :task_status, :list_id)
-    #end
 end

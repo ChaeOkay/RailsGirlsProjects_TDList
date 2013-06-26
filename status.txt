@@ -27,18 +27,13 @@ Remove List functions
 	- list
 		- redirect to root
 		- add notice
-*****
-
-change paths - from list#show to list#index
-change paths - from task#show to list#show
-
-*****
 
 Edit Task functions
-	- 
+
+change paths - from task#show to list#show
 
 Remove Task functions
-	- 
+
 
 
 ############################

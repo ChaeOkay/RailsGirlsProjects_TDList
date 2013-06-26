@@ -60,9 +60,4 @@ class ListsController < ApplicationController
 		def set_list
 			@list = List.find(params[:id])
 		end
-
-		# Only allow a trusted parameter "white list" through.
-		#def list_params
-		#	params.require(:list).permit(:name, :list_status)
-		#end
 end
