@@ -50,8 +50,9 @@ class ListsController < ApplicationController
 
 	# DELETE /lists/1
 	def destroy
+		@list = List.find(params[:id])
 		@list.destroy
-		redirect_to lists_url, notice: 'List was successfully destroyed.'
+		redirect_to root_url, notice: 'List was successfully destroyed.'
 	end
 
 	private

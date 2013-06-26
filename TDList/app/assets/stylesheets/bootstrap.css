@@ -21,6 +21,11 @@
   margin: 0 0 20px 20px;
  }
 
+ #notice {
+  color: #778F00;
+
+ }
+
 
  /* end of added */
 
@@ -706,7 +711,7 @@ a.muted:focus {
 }
 
 .text-warning {
-  color: #c09853;
+  color: #404040;   //changed
 }
 
 a.text-warning:hover,

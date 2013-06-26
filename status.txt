@@ -9,15 +9,15 @@ List POST functions
 		- changes def create in controller
 
 	- edit list - test
+
 List index - remove index number in view
 
 Task show/(listid)
 	- change text - edit list -> edit name
+
 Task new
 	- create new list link
-
 	- change form to simple_form syntax
-	- list should have drop down of lists in db
 	- test creating new task
 
 Forms - task and list

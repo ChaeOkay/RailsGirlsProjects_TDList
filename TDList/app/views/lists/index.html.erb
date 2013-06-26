@@ -2,6 +2,8 @@
   <div class="new">
 	 <%= link_to 'Create New List', new_list_path %>
   </div>
+  <div class="new" id="notice"><%= notice %>
+  </div>
 
   <div>
     <% @lists.each do |list| %>

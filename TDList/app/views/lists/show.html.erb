@@ -13,9 +13,15 @@
   <% end %>
 </h4>
 
-<p class="btn">
-  <%= link_to 'Show list', task_path(@list.id) %>
-</p>
-<p class="btn">
+<% if @tasks.empty? %>
+  <p class="btn">
   <%= link_to 'Add new task', new_task_path %>
-</p>
+  </p>
+<% else %>
+  <p class="btn">
+    <%= link_to 'Show list', task_path(@list.id) %>
+  </p>
+  <p class="btn">
+    <%= link_to 'Add new task', new_task_path %>
+  </p>
+<% end %>
