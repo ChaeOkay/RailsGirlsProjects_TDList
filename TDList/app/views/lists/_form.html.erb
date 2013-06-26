@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.input :name %>
-  <%= f.input :list_status %>
+  <%= f.input :name, :label => 'Title of List' %>
+  <%= f.input :list_status, :default => ['In Progress'], collection: ['In Progress', 'Completed']%>
   <%= f.submit %>
 <% end %>

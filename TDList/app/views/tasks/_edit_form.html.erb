@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <%= f.association :list %>
-  <%= f.input :description %>
-  <%= f.input :task_status %>
+  <%= f.association :list, :label => 'Select List' %>
+  <%= f.input :description, :label => 'Task Description' %>
+  <%= f.input :task_status, :default => ['In Progress'], collection: ['In Progress', 'Completed']%>
   <%= f.button :submit %>
 
 <% end %>
