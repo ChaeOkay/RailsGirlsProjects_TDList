@@ -1,3 +1,33 @@
+############################
+
+branch 062613_01
+goals:
+
+List POST functions
+	- create new list - name (check controller)
+		- added attr_accessible to model
+		- changes def create in controller
+
+	- edit list - test
+List index - remove index number in view
+
+Task show/(listid)
+	- change text - edit list -> edit name
+Task new
+	- create new list link
+
+	- change form to simple_form syntax
+	- list should have drop down of lists in db
+	- test creating new task
+
+Forms - task and list
+	- change task-status field to drop down options - In progress or Completed
+
+Remove functions
+
+
+############################
+
 branch 062413_2
 - working on has/many belongs/to
 - need to show tasks and create tasks
