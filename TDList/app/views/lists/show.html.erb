@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @list.name %> <small><%= @list.list_status %></small></h3>
+<h4> With Tasks : 
+  <% if @tasks.empty? %>
+      none
+  <% else %>
+		<% @tasks.each do |t| %>
+      <small>
+			<%= t.description %>
+      </small>
+		<% end %>
+  <% end %>
+</h4>
 
 <p class="btn">
   <%= link_to 'Show list', task_path(@list.id) %>

@@ -1,4 +1,4 @@
-<%= simple_form_for @task do |f| %>
+<%= simple_form_for @task  do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -15,5 +15,5 @@
   <%= f.input :description %>
   <%= f.input :task_status %>
   <%= f.button :submit %>
-  </div>
+
 <% end %>

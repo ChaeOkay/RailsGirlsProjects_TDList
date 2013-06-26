@@ -31,10 +31,10 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    @task = Task.new(params[:description, :task_status, :task_id])
+    @task = Task.new(params[:task])
 
     if @task.save
-      redirect_to @task, notice: 'Task was successfully created.'
+      redirect_to @task.list, notice: 'Task was successfully created.'
     else
       render action: 'new'
     end
@@ -42,7 +42,7 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
-    if @task.update(task_params)
+    if @task.update(params[:task])
       redirect_to @task, notice: 'Task was successfully updated.'
     else
       render action: 'edit'
