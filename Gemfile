@@ -19,7 +19,7 @@ group :test do
 end
 
 group :assets do
-  gem 'bootstrap-sass', '2.3.1.0'
+  gem 'twitter-bootstrap-rails'
 end
 
 group :doc do
