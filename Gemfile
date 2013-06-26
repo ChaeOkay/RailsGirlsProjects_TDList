@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.0.0.rc2'
-gem 'bootstrap-sass', '2.3.1.0'
-gem 'simple_form'
 
 group :development, :test do
 	gem 'sqlite3', '1.3.7'
@@ -20,6 +18,10 @@ group :test do
 	gem 'capybara', '2.1.0'
 end
 
+group :assets do
+  gem 'bootstrap-sass', '2.3.1.0'
+end
+
 group :doc do
 	gem 'sdoc', '0.3.20', require: false
 end
@@ -27,6 +29,8 @@ end
 group :production do
   gem 'pg', '0.15.1'
 end
+
+gem 'simple_form'
 
 #helping with transition
 gem 'protected_attributes'
