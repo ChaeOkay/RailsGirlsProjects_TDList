@@ -1,5 +1,11 @@
 ############################
 
+branch 062413_2
+- working on has/many belongs/to
+- need to show tasks and create tasks
+
+############################
+
 branch 062613_01
 goals:
 
@@ -33,11 +39,3 @@ Edit Task functions
 change paths - from task#show to list#show
 
 Remove Task functions
-
-
-
-############################
-
-branch 062413_2
-- working on has/many belongs/to
-- need to show tasks and create tasks

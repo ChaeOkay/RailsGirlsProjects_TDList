@@ -28,4 +28,6 @@ ActiveRecord::Schema.define(version: 20130623212328) do
     t.datetime "updated_at"
   end
 
+  add_index "tasks", ["list_id", "created_at"], name: "index_tasks_on_list_id_and_created_at"
+
 end
