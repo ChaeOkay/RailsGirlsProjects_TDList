@@ -1,3 +1,17 @@
+- Unit tests (model)
+- Integration tests (user experience)
+- Refactor controller
+- Add Devise user authentication
+
+- Routes file
+- Bold in/progress
+- change in/progress outside of edit page
+- new task relate to list number
+
+############################
+
+branch 070213_01
+
 ############################
 
 branch 062413_2
