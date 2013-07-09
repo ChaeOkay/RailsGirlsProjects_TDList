@@ -9,7 +9,7 @@ describe List do
   describe 'creating a new list' do
 
     it 'should be an instance of List' do   #example
-      subject.should be_an_instance_of List    #expectation
+      should be_an_instance_of List    #expectation
     end
 
     it 'should change the number of Lists' do

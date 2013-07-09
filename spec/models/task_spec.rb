@@ -8,7 +8,7 @@ describe Task do
 
   describe 'create a new task' do
     it 'should be an instance of Task' do   #example
-      subject.should be_an_instance_of Task    #expectation
+      should be_an_instance_of Task    #expectation
     end
 
     it 'should change the number of Tasks' do
