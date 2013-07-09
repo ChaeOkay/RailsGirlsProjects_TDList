@@ -12,7 +12,6 @@ describe List do
   context 'invalid entry' do
     subject(:invalid_list) { List.create(status: nil) }
     it_behaves_like 'an invalid entry'
-    it_behaves_like 'a valid entry'
   end
 
   context 'adding Lists' do
