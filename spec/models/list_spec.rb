@@ -7,16 +7,17 @@ describe List do
   it { should validate_presence_of(:list_status) }
 
   describe 'creating a new list' do
-    let (:list) { List.new(id: 1, name: 'Books', list_status: 'In Progress') }
 
     it 'should be an instance of List' do   #example
-      list.should be_an_instance_of List    #expectation
+      subject.should be_an_instance_of List    #expectation
     end
 
     it 'should change the number of Lists' do
       list2 = List.new(name: 'List2', list_status: 'In Progress')
       expect { list2.save }.to change { List.count }.by(1)
     end
+
+    let (:list) { List.new(id: 1, name: 'Books', list_status: 'In Progress') }
 
     it 'should have a name' do
       list.name.should == 'Books'
