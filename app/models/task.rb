@@ -6,7 +6,6 @@ class Task < ActiveRecord::Base
   belongs_to :list
 
   private
-
   def default_status
     self.status ||= 'In Progress'
   end
