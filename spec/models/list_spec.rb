@@ -20,5 +20,4 @@ describe List do
       expect { @list2.save }.to change { List.count }.by(1)
     end
   end
-
 end

@@ -21,5 +21,4 @@ describe Task do
       expect { @task2.save }.to change { Task.count }.by(1)
     end
   end
-
 end
