@@ -9,15 +9,13 @@ describe Task do
 
   describe 'create a new task' do
 
-    let (:task) { Task.new(description: 'Life of Pi', task_status: 'In Progress', list_id: 1) }
+    subject(:task) { Task.create(description: 'Life of Pi', task_status: 'In Progress', list_id: 1) }
 
-    it 'should have a description' do
-      task.description.should == 'Life of Pi'
-    end
+    its(:description) { should == 'Life of Pi' }
 
     it 'is not valid if it does not have a task_status' do
       task.task_status = nil
-      task.should_not be_valid
+      task.task_status { should be_nil? }
     end
 
     it 'should change the number of Tasks' do

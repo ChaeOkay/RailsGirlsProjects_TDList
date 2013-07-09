@@ -9,18 +9,15 @@ describe List do
 
   describe 'create a new list' do
 
-    let (:list) { List.new(id: 1, name: 'Books', list_status: 'In Progress') }
+    subject(:list) { List.create(id: 1, name: 'Books', list_status: 'In Progress') }
 
-    it 'should have a name' do
-      list.name.should == 'Books'
-    end
+    its(:name) { should == 'Books' }
+    its(:list_status) { should match(/in progress/i) }
 
     it 'is not valid if it does not have a name' do
       list.name = nil
-      list.should_not be_valid
+      list.list_status { should be_nil? }
     end
-
-    it { list.list_status.should match(/in progress/i) }
 
     it 'should change the number of Lists' do
       list2 = List.new(name: 'List2', list_status: 'In Progress')
