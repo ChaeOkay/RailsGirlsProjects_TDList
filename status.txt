@@ -1,5 +1,5 @@
-- Unit tests (model)
 - Integration tests (user experience)
+	- update controller to match new migration -  colum names
 - Refactor controller
 - Add Devise user authentication
 
@@ -10,7 +10,11 @@
 
 ############################
 
-branch 070213_01
+branch 070913_01
+
+- Unit tests (model)
+- new migration, updated column names
+- Shared example tests
 
 ############################
 
