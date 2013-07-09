@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130703233555) do
+ActiveRecord::Schema.define(version: 20130709182631) do
 
   create_table "lists", force: true do |t|
-    t.string   "name"
-    t.string   "list_status"
+    t.string   "description"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tasks", force: true do |t|
     t.string   "description"
-    t.string   "task_status"
+    t.string   "status"
     t.integer  "list_id"
     t.datetime "created_at"
     t.datetime "updated_at"

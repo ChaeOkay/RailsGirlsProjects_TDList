@@ -7,7 +7,7 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
-  gem 'rspec-rails', 	'2.13.1'
+  gem 'rspec-rails', 	'2.14'
 end
 
 gem 'sass-rails',   '4.0.0.rc1'
