@@ -1,14 +1,11 @@
 require 'spec_helper'
 
 describe List do
+  it { should have_many(:tasks) }
 
   context 'valid entry' do
-    it_behaves_like 'a valid entry'
-    it { should have_many(:tasks) }
-  end
-
-  context 'valid entry with description' do
     subject(:list) { List.create(description: 'Books', status: 'In Progress') }
+    it_behaves_like 'a valid entry'
     its(:description) { should == 'Books' }
   end
 
