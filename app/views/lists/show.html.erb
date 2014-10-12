@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @list.name %> 
-  <small> <%= @list.list_status %></small> 
-  <small><%= link_to 'Edit List', edit_list_path(@list) %></small> 
+<h3><%= @list.description %>
+  <small> <%= @list.status %></small>
+  <small><%= link_to 'Edit List', edit_list_path(@list) %></small>
 </h3>
 
 
@@ -19,7 +19,7 @@
   <% @tasks.each do |t| %>
   <tbody>
     <td><%= link_to t.description, edit_task_path(t) %></td>
-    <td><%= link_to t.task_status, edit_task_path(t) %></td>
+    <td><%= link_to t.status, edit_task_path(t) %></td>
   </tbody>
   <% end %>
 </table>
